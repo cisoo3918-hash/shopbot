@@ -1,0 +1,6 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>사장님 화면</title></head>
+<body style="font-family:'Malgun Gothic',sans-serif"><p>사장님 화면으로 가는 중입니다…</p><script>
+var q=new URLSearchParams(location.search);
+fetch('../route.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.json()}).then(function(j){
+location.replace(j.api+'/admin/'+encodeURIComponent(q.get('s')||'')+'?k='+encodeURIComponent(q.get('k')||''))});
+</script></body></html>
